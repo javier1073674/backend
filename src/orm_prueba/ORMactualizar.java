@@ -17,20 +17,20 @@ public class ORMactualizar {
             try (Session session = factory.openSession()) {
                 session.beginTransaction(); // Iniciar transacción
 
-                // 🔹 ID del artista que queremos actualizar
+                //ID del artista que queremos actualizar
                 int IdProducto = 4; // Cambiar según la BD
 
-                // 🔹 Buscar el artista en la base de datos
+                //Buscar el artista en la base de datos
                 Producto producto = session.get(Producto.class, IdProducto);
 
                 if (producto != null) {
-                    // 🔹 Actualizar los valores
+                    //Actualizar los valores
                     producto.setNombre("Polaris");
                     producto.setDescripcion("Diseño perosanalizable con base en acero y 4 puntos de reclinacion ");
                     producto.setPrecio(390000);
                     producto.setImagen("imagenes/sillas/silla4");
 
-                    // 🔹 Guardar cambios
+                    //Guardar cambios
                     session.getTransaction().commit();
                     System.out.println("Producto actualizado: " + producto);
                 } else {
