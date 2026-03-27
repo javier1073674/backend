@@ -17,13 +17,13 @@ public class ORMconsulta {
             try (Session session = factory.openSession()) {
                 session.beginTransaction(); // Iniciar transacción
 
-                // 🔹 ID del artista a consultar (DEBE SER UN ENTERO)
+                //ID del artista a consultar (DEBE SER UN ENTERO)
                 int IdProducto = 2; // Cambiar según la BD
 
-                // 🔹 Obtener el artista desde la BD
+                //Obtener el artista desde la BD
                 Producto producto = session.get(Producto.class, IdProducto);
 
-                // 🔹 Mostrar el resultado
+                //Mostrar el resultado
                 if (producto != null) {
                     System.out.println("Registro obtenido: " + producto);
                 } else {
