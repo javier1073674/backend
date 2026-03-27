@@ -18,10 +18,10 @@ public class ORMeliminar {
             try (Session session = factory.openSession()) {
                 session.beginTransaction(); // Iniciar transacción
 
-                // 🔹 ID del producto que quieres eliminar
+                //ID del producto que quieres eliminar
                 int idProducto = 4;
 
-                // 🔹 Buscar el producto
+                //Buscar el producto
                 Producto producto = session.get(Producto.class, idProducto);
 
                 if (producto != null) {
