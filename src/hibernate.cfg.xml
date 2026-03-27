@@ -1,0 +1,32 @@
+<!DOCTYPE hibernate-configuration PUBLIC 
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN" 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuración de la conexión a la base de datos -->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/arwill_db?useSSL=false&amp;serverTimezone=UTC</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">Javier#2001</property>        
+        
+        <!-- Configuración del pool de conexiones -->
+        <!-- connection.pool_size → Especifica que Hibernate usará solo una conexión en el pool de prueba. -->
+        <property name="connection.pool_size">1</property>  
+                
+      
+        <!-- Dialecto de SQL utilizado -->
+        <!-- dialect  Define el dialecto SQL de Hibernate para MySQL. -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Mostrar consultas SQL en consola -->
+        <!-- show_sql=true → Permite imprimir las consultas SQL generadas por Hibernate en la consola para depuración. -->		
+        <property name="show_sql">true</property>
+
+        <!-- Configuración del contexto de sesión -->
+        <!-- current_session_context_class=thread  Usa el contexto de sesión basado en hilos (thread), 
+        lo que permite manejar sesiones de Hibernate por cada hilo en ejecución. -->		
+        <property name="current_session_context_class">thread</property>        
+        
+    </session-factory>
+</hibernate-configuration>        
